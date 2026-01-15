@@ -4,17 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wave Unic</title>
-  <link rel="stylesheet" href="estilos1.css" />
+  <link rel="stylesheet" href="estilo1.css" />
 </head>
 <body>
+  <video autoplay="autoplay" loop="loop" id="video_background" preload="auto" volume="0">
+    <source src="imgW.U/WAVES.mp4" type="video/mp4" />
+  </video>
   <header>
     <div class="navbar">
-      <div class="logo"><img src="imgNM/Wave Unic.png" height="150" width="250"></div>
+      <div class="logo"><img src="imgW.U/Wave Unic Logo.png" height="75" width="250"></div>
       <nav>
         <ul>
-            <li><a href="index.html"> Inicio</a></li>
-            <li><a href="#">Catálogo</a></li>
-            <li><a href="#"> Contacto</a></li>
+            <li><a href="bienvenido.html"> Bienvenid@</a></li>
+            <li><a href="index.html"> <ins>Inicio</ins></a></li>
+            <li><a href="catalogo.html"> Catálogo</a></li>
+            <li><a href="contacto.html"> Contacto</a></li>
         </ul>
     </nav>
     </div>
@@ -24,31 +28,50 @@
     <div class="hero-content">
       <h1>Siéntete tan libre como una ola.</h1>
       <p>Explora, compra, y disfruta tu outfit soñado con nosotros.</p>
-      <a href="#" class="btn">Explora el Inventario</a>
+      
+      <form action="catalogo.html" class="search-box">
+        <input type="text" placeholder="Busca tu outfit wave...">
+        <button type="submit">🔍</button>
+      </form>
+
+      <a href="catalogo.html" class="btn">Explora el Inventario</a>
     </div>
   </section>
 
-  <section class="cards">
-    <div class="card">
-      <img src="#" alt="#">
-      <h2>Explora el Inventario.</h2>
-      <p>Encuentra las prendas que más te gusten.</p>
-      <a href="#">Más información</a>
+ <section class="cards">
+  <div class="card">
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="imgW.U/Modelo.Acubi01.mp4" type="video/mp4">
+        </video>
     </div>
-    <div class="card">
-      <img src="#" alt="#">
-      <h2>Detalles y Precio.</h2>
-      <p>Personaliza tu outfit Perfecto.</p>
-      <a href="#">Más información</a>
-    </div>
-    <div class="card">
-      <img src="#" alt="#">
-      <h2>Compara los outfit.</h2>
-      <p>Mira lo que necesitas.</p>
-      <a href="#">Más información</a>
-    </div>
-  </section>
+    <h2>Tenemos lo que necesitas.</h2>
+    <p>Elige lo que te <i>encante</i>.</p>
+    <a href="catalogo.html">Más información</a>
+</div>
 
+<div class="card">
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="imgW.U/Modelo.Acubi02.mp4" type="video/mp4">
+        </video>
+    </div>
+    <h2>Compara los outfit.</h2>
+    <p>Mira lo que <i>gustes</i>.</p>
+    <a href="catalogo.html">Más información</a>
+</div>
+
+<div class="card">
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="imgW.U/Modelo.Acubi03.mp4" type="video/mp4">
+        </video>
+    </div>
+    <h2>Explora el Inventario.</h2>
+    <p>Personaliza tu <i>outfit Perfecto</i>.</p>
+    <a href="catalogo.html">Más información</a>
+</div>
+</section>
   <footer>
     <p>&copy; 2025 The Best Acubi Store in RD</p>
   </footer>

@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    background-color: #ffffff;
+    background-image: url('imgW.U/Logo\ pequeño\ Wave\ Unic.png'); 
+    background-repeat: repeat;
+    background-size: 255px; /* Ajusta el tamaño de los logos */
+    
+    /*LA ANIMACIÓN */
+    animation: moverFondo 20s linear infinite; 
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*definir el movimiento */
+@keyframes moverFondo {
+    from {
+        /* Posición inicial */
+        background-position: 0 0;
+    }
+    to {
+        /* Posición final (se tiene que ajustar los px para cambiar la dirección) */
+        background-position: 500px 500px; 
+    }
+}
+
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    z-index: 1; /* Para que el contenido esté sobre el fondo */
+}
+
+/*Contenido Central (Logo + Enter) */
+.main-content {
+    flex: 1; /* Esto empuja al footer hacia abajo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center;
+    gap: 30px;
+}
+
+.logo-central img {
+    width: 200px;
+    height: auto;
+}
+
+.enter-btn {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.enter-btn:hover {
+    opacity: 0.5;
+}

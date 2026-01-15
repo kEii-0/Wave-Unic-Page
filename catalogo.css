@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#video_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden; 
+    object-fit: cover; 
+}
+   
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #FFFCF6;
+}
+
+header {
+    position: absolute; /* Esto hace que el menú flote SOBRE la imagen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Lo pone por encima de todo */
+    background-color: transparent; 
+    padding: 1rem 2rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* Sombra suave para que se lea mejor */
+}
+
+.hero {
+    background: url("imgW.U/header\ W.U.\ 003.jpg") no-repeat center center/cover;
+    height: 100vh; /* Ocupa toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Capa oscura para que el texto blanco se lea perfecto */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Pone el texto por delante de la capa oscura */
+}
+
+/* Contenedor: Alineado a la izquierda para que el crecimiento sea hacia la derecha */
+.contenedor-catalogo {
+  display: flex;
+  width: 55%;
+  height: 600px;
+  gap: 15px;
+  margin: 30px auto;
+  justify-content: flex-start; /* Empuja el crecimiento hacia la derecha */
+  align-items: stretch;
+}
+
+.tarjeta {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  cursor: pointer;
+  background-image: var(--imagen);
+  background-size: cover;
+  background-position: left center; /* La foto se queda fija a la izquierda mientras crece */
+  transition: flex 0.7s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  
+  /* Punto de anclaje visual */
+  transform-origin: left; 
+}
+
+/* Expansión: Solo cambia el valor de flex */
+.tarjeta:hover {
+  flex: 8; 
+}
+
+.contenido {
+  position: absolute;
+  bottom: 25px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  border-radius: 40px;
+  color: rgb(255, 255, 255);
+  width: 45px; 
+  height: 45px;
+  transition: width 0.5s ease;
+  overflow: hidden;
+}
+
+.tarjeta:hover .contenido {
+  width: 280px; 
+  height: 100px;
+}
+
+/*Texto */
+.texto {
+  color: black;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tarjeta:hover .texto {
+  opacity: 1;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}

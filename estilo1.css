@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#video_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden; 
+    object-fit: cover; 
+}
+   
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #FFFCF6;
+}
+
+header {
+    position: absolute; /* Esto hace que el menú flote SOBRE la imagen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Lo pone por encima de todo */
+    background-color: transparent; 
+    padding: 1rem 2rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar a {
+    color: white; /* Letras blancas para que se vean sobre la imagen oscura */
+    text-decoration: none;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* Sombra suave para que se lea mejor */
+}
+
+.hero {
+    background: url("imgW.U/header\ W.U.\ 003.jpg") no-repeat center center/cover;
+    height: 100vh; /* Ocupa toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Capa oscura para que el texto blanco se lea perfecto */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Pone el texto por delante de la capa oscura */
+}
+
+.search-box {
+    margin: 2rem auto;
+    display: flex;
+    max-width: 400px;
+}
+
+.search-box input {
+    padding: 12px 20px;
+    flex: 1;
+    border: none;
+    border-radius: 25px 0 0 25px; /* Redondo a la izquierda */
+    outline: none;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #B6D2E2; 
+    color: white;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0; /* Redondo a la derecha */
+}
+
+.hero h1 {
+    font-size: 2rem;
+    font-family: Petit Formal Script, The Seasons;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+
+.btn {
+    background-color: #B6D2E2;
+    color: #fffbf2;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+} 
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding:40px 20px;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    margin-bottom: 0.5rem;
+}
+
+.card a {
+    color: #7D8CB6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/*Controla el tamaño de la forma*/
+.video-container {
+    width: 255px;  /*Aquí el ancho */
+    height: 355px; /*Aquí el alto */
+    margin: 0 auto 15px; /*Centra el video y lo separa del texto */
+  border-radius: 20px; 
+    overflow: hidden;    /*Corta el video para que no se salga del círculo */
+    background-color: #000; /*Fondo negro por si el video tarda en cargar */
+}
+
+/*Asegura que el video llene el contenedor sin deformarse */
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*Mantiene la proporción y llena el espacio */
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
